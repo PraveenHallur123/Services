@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 3rem;
+      color: #f7f7f7;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      color: #eaeaea;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    /* Services Section */
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 20px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s, box-shadow 0.5s;
+      backdrop-filter: blur(10px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c, #42a5f5);
+      background-size: 400% 400%;
+      z-index: -1;
+      transition: opacity 0.5s;
+      animation: gradientMove 6s infinite;
+      opacity: 0.3;
+    }
+
+    .service-card:hover::before {
+      opacity: 0.5;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .icon {
+      font-size: 60px;
+      color: white;
+      margin-bottom: 20px;
+      animation: popIn 1s ease;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .service-title {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #fdfdfd;
+    }
+
+    .service-description {
+      color: #ddd;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .contact-button {
+      margin: 20px auto;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      color: #333;
+      background: #f7f7f7;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      display: block;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-button:hover {
+      background: #ff7eb3;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Our Services</h1>
+  <p>Delivering professional solutions tailored to your needs.</p>
+
+  <!-- Services Section -->
+  <div class="services-container">
+    <!-- Consulting Services -->
+    <div class="service-card">
+      <div class="icon">🧠</div>
+      <h3 class="service-title">Consulting Services</h3>
+      <p class="service-description">
+        - Guidance for startups to build software or websites.<br>
+        - Technical consultation for academic projects.<br>
+        - Support for debugging and optimizing existing projects.
+      </p>
+    </div>
+
+    <!-- Academic Project Development -->
+    <div class="service-card">
+      <div class="icon">📚</div>
+      <h3 class="service-title">Academic Project Development</h3>
+      <p class="service-description">
+        - Mini and major projects for students (engineering, diploma, etc.).<br>
+        - Technologies: Java, Python, PHP, C#, etc.<br>
+        - Frontend and Backend Integration Projects.<br>
+        - Database-based and non-database projects.
+      </p>
+    </div>
+
+    <!-- Custom Software Development -->
+    <div class="service-card">
+      <div class="icon">💻</div>
+      <h3 class="service-title">Custom Software Development</h3>
+      <p class="service-description">
+        - Small-scale business software (e.g., inventory, billing systems).<br>
+        - Customized software solutions for startups.<br>
+        - Tools and utilities development.
+      </p>
+    </div>
+
+    <!-- Ready-Made Projects -->
+    <div class="service-card">
+      <div class="icon">🚀</div>
+      <h3 class="service-title">Ready-Made Projects</h3>
+      <p class="service-description">
+        - Pre-built projects for students to buy and learn from.<br>
+        - Categorized by language or difficulty (beginner to advanced).
+      </p>
+    </div>
+  </div>
+
+  <button class="contact-button" onclick="contactUs()">Contact Us</button>
+
+  <script>
+    // JavaScript for the Contact Button
+    function contactUs() {
+      alert("Thank you for your interest! Reach out to us at: https://miniprojectbytes.blogspot.com/");
+    }
+  </script>
+</body>
+</html>
